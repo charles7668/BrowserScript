@@ -28,7 +28,7 @@
   var add_event_to_more_result = (i) => {
     var result_more_btn =
       document.getElementsByClassName("result--more__btn")[0];
-    if (result_more_btn === undefined) {
+    if (result_more_btn === undefined && i < 20) {
       setTimeout(() => {
         add_event_to_more_result(i + 1);
       }, 10);
