@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         duckduckgo script
 // @namespace    http://duckduckgo.com/
-// @version      1.0
+// @version      1.1
 // @description  make duckduckgo convenient
 // @author       charles
 // @match        https://duckduckgo.com/?q=*
@@ -38,21 +38,19 @@ GM_addStyle(`
     } else {
       counter = 0;
       pre_result_length = result.length;
-      if (counter < 100) {
-        for (var i = 0; i < result.length; i++) {
-          var clone_result = result[i].cloneNode(true);
-          var img_parent = result[i].getElementsByClassName(
-            "result__extras__url"
-          )[0];
-          var img = img_parent.getElementsByClassName("result__icon")[0];
-          clone_result
-            .getElementsByClassName("result__extras__url")[0]
-            .replaceChild(
-              img,
-              clone_result.getElementsByClassName("result__icon")[0]
-            );
-          links.replaceChild(clone_result, result[i]);
-        }
+      for (var i = 0; i < result.length; i++) {
+        var clone_result = result[i].cloneNode(true);
+        var img_parent = result[i].getElementsByClassName(
+          "result__extras__url"
+        )[0];
+        var img = img_parent.getElementsByClassName("result__icon")[0];
+        clone_result
+          .getElementsByClassName("result__extras__url")[0]
+          .replaceChild(
+            img,
+            clone_result.getElementsByClassName("result__icon")[0]
+          );
+        links.replaceChild(clone_result, result[i]);
       }
       add_listener_to_more_result(0);
     }
