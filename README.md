@@ -6,9 +6,12 @@ just copy code to tampermonkey extension
 
 ## Script list
 - duckduckgo script
+  - [install](https://greasyfork.org/zh-TW/scripts/432980-duckduckgo-script)
   - keyword highlight to red color
   - let style like to google
-  - [install](https://greasyfork.org/zh-TW/scripts/432980-duckduckgo-script)
 - risu download
-  - download risu media file
   - [install](https://greasyfork.org/zh-TW/scripts/425073-risu-download)
+  - download risu media file
+- xiannvku one page view
+  - [install](https://greasyfork.org/zh-TW/scripts/432997-%E4%BB%99%E5%A5%B3%E5%BA%AB%E4%B8%80%E9%A0%81%E6%AA%A2%E8%A6%96)
+  - show xiannvku.com picture in one page
