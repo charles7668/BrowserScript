@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         duckduckgo script
 // @namespace    http://duckduckgo.com/
-// @version      1.1
+// @version      1.2
 // @description  make duckduckgo convenient
 // @author       charles
 // @match        https://duckduckgo.com/?q=*
+// @match        https://duckduckgo.com/?t=*
 // @icon         https://www.google.com/s2/favicons?domain=duckduckgo.com
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -28,7 +29,7 @@ GM_addStyle(`
   var pre_result_length = 0;
   var counter = 0;
   var change_result_node = function () {
-    var result = document.getElementsByClassName("result results_links_deep");
+    var result = document.getElementsByClassName("results_links_deep");
     var links = document.getElementById("links");
     if (result.length <= pre_result_length && counter < 100) {
       setTimeout(() => {
