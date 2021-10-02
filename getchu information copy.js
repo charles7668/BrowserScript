@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         getchu information copy
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  copy getchu item information
 // @author       charles
 // @match        http://www.getchu.com/soft.phtml?id=*
@@ -48,7 +48,24 @@ const keywords = {
   category_keyword: "%category",
   product_number_keyword: "%product_number",
   special_keyword: "%special",
+  sub_genre_keyword: "%sub_genre_keyword",
 };
+
+const keywod_desc = [
+  { keyword: keywords.title_keyword, desc: "titlename" },
+  { keyword: keywords.brand_keyword, desc: "ブランド" },
+  { keyword: keywords.price_keyword, desc: "定価" },
+  { keyword: keywords.release_date_keyword, desc: "発売日" },
+  { keyword: keywords.media_keyword, desc: "メディア" },
+  { keyword: keywords.genre_keyword, desc: "ジャンル" },
+  { keyword: keywords.JAN_Code_keyword, desc: "JANコード" },
+  { keyword: keywords.original_keyword, desc: "原画" },
+  { keyword: keywords.scenario_keyword, desc: "シナリオ" },
+  { keyword: keywords.category_keyword, desc: "カテゴリ" },
+  { keyword: keywords.product_number_keyword, desc: "品番" },
+  { keyword: keywords.special_keyword, desc: "商品同梱特典" },
+  { keyword: keywords.sub_genre_keyword, desc: "サブジャンル" },
+];
 var search_cookie = function (cookie_name) {
   var cookies = document.cookie;
   console.log(cookies);
@@ -87,28 +104,12 @@ var parse_list = () => {
     }
     var keyword = "%unknown";
     var td0_string = td[0].innerText.trim();
-    if (td0_string === "ブランド：") {
-      keyword = keywords.brand_keyword;
-    } else if (td0_string === "定価：") {
-      keyword = keywords.price_keyword;
-    } else if (td0_string === "発売日：") {
-      keyword = keywords.release_date_keyword;
-    } else if (td0_string === "メディア：") {
-      keyword = keywords.media_keyword;
-    } else if (td0_string === "ジャンル：") {
-      keyword = keywords.genre_keyword;
-    } else if (td0_string === "JANコード：") {
-      keyword = keywords.JAN_Code_keyword;
-    } else if (td0_string === "品番：") {
-      keyword = keywords.product_number_keyword;
-    } else if (td0_string === "原画：") {
-      keyword = keyword.soriginal_keyword;
-    } else if (td0_string === "シナリオ：") {
-      keyword = keyword.scenario_keyword;
-    } else if (td0_string === "商品同梱特典：") {
-      keyword = keyword.special_keyword;
-    } else if (td0_string === "カテゴリ：") {
-      keyword = keyword.category_keyword;
+    td0_string = td0_string.split("：")[0].trim();
+    for (var x = 0; x < keywod_desc.length; x++) {
+      if (td0_string === keywod_desc[x].desc) {
+        keyword = keywod_desc[x].keyword;
+        break;
+      }
     }
     result.push({ keyword, value });
   }
@@ -166,41 +167,12 @@ var get_copy_setting_default_string = () => {
     copy_setting_div.setAttribute("id", "copy_info_input_setting");
     let ul = document.createElement("ul");
 
-    let li1 = document.createElement("li");
-    let li2 = document.createElement("li");
-    let li3 = document.createElement("li");
-    let li4 = document.createElement("li");
-    let li5 = document.createElement("li");
-    let li6 = document.createElement("li");
-    let li7 = document.createElement("li");
-    let li8 = document.createElement("li");
-    let li9 = document.createElement("li");
-    let li10 = document.createElement("li");
-    let li11 = document.createElement("li");
-    let li12 = document.createElement("li");
+    for (var i = 0; i < keywod_desc.length; i++) {
+      let li = document.createElement("li");
+      li.innerText = keywod_desc[i].keyword + "=" + keywod_desc[i].desc;
+      ul.appendChild(li);
+    }
 
-    li1.innerText = "%title = title name";
-    li2.innerText = "%brand = ブランド";
-    li3.innerText = "%price = 定価";
-    li4.innerText = "%release_date = 発売日";
-    li5.innerText = "%media = メディア";
-    li6.innerText = "%genre = ジャンル";
-    li7.innerText = "%JAN_Code = JANコード";
-    li8.innerText = "%original = 原画";
-    li9.innerText = "%scenario = シナリオ";
-    li10.innerText = "%category = カテゴリ";
-    li11.innerText = "%product_number = 品番";
-    li12.innerText = "%special = 商品同梱特典";
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-    ul.appendChild(li4);
-    ul.appendChild(li5);
-    ul.appendChild(li6);
-    ul.appendChild(li7);
-    ul.appendChild(li8);
-    ul.appendChild(li9);
-    ul.appendChild(li10);
     let text_area = document.createElement("textarea");
     text_area.setAttribute("id", "copy_info_setting_textarea");
     text_area.setAttribute("cols", "50");
