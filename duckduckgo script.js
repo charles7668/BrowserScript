@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         duckduckgo script
 // @namespace    http://duckduckgo.com/
-// @version      1.2
+// @version      1.3
 // @description  make duckduckgo convenient
 // @author       charles
 // @match        https://duckduckgo.com/?q=*
@@ -19,6 +19,9 @@ GM_addStyle(`
 }
 .result__body > .result__snippet > b {
     color: red !important;
+}
+.highlight{
+  cursor: inherit !important;
 }
 `);
 
