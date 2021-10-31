@@ -18,3 +18,6 @@ just copy code to tampermonkey extension
 - getchu getchu information copy
   - [install](https://greasyfork.org/zh-TW/scripts/433263-getchu-information-copy)
   - copy getchu item informtaion
+- wnacg jump
+  - [install](https://greasyfork.org/zh-TW/scripts/434737-wnacg-jump)
+  - wnacg jump page
