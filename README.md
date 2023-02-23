@@ -1,10 +1,13 @@
 # BrowserScript
+
 tampermonkey scipts
 
 ## How to use
+
 just copy code to tampermonkey extension
 
 ## Script list
+
 - duckduckgo script
   - [install](https://greasyfork.org/zh-TW/scripts/432980-duckduckgo-script)
   - keyword highlight to red color
@@ -21,3 +24,6 @@ just copy code to tampermonkey extension
 - wnacg jump
   - [install](https://greasyfork.org/zh-TW/scripts/434737-wnacg-jump)
   - wnacg jump page
+- bing improvent
+  - [install](https://greasyfork.org/zh-TW/scripts/460536-bing-improvent)
+  - try to improve the Bing search results
