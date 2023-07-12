@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         getchu information copy
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  copy getchu item information
 // @author       charles
 // @match        *://www.getchu.com/soft.phtml?id=*
