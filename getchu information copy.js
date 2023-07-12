@@ -4,7 +4,7 @@
 // @version      1.1
 // @description  copy getchu item information
 // @author       charles
-// @match        http://www.getchu.com/soft.phtml?id=*
+// @match        *://www.getchu.com/soft.phtml?id=*
 // @icon         https://www.google.com/s2/favicons?domain=getchu.com
 // @grant        GM_addStyle
 // @grant        GM_setClipboard
