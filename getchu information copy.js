@@ -111,6 +111,16 @@ var parse_list = () => {
         break;
       }
     }
+    // 轉換為 yyMMdd 的格式
+    if(keyword === keywords.release_date_keyword)
+    {
+      let date = new Date(value);
+      let year = date.getFullYear().toString().substring(2);
+      let month = date.getMonth().toString().padStart(2, "0");
+      let day = date.getDay().toString().padStart(2, "0");
+      value = year + month + day;
+    }
+
     result.push({ keyword, value });
   }
   return result;
