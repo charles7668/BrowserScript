@@ -27,3 +27,6 @@ just copy code to tampermonkey extension
 - bing improvent
   - [install](https://greasyfork.org/zh-TW/scripts/460536-bing-improvent)
   - try to improve the Bing search results
+- ChatGPT Helper
+  - [install](https://greasyfork.org/zh-TW/scripts/471324-chatgpt-helper)
+  - improve chatGPT experience
