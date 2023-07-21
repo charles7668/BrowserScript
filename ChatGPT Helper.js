@@ -30,7 +30,7 @@ function sendMessage(message) {
     let checkButton = document.querySelector(
         '.relative[role="presentation"] > div > div > button > div'
     );
-    if (checkButton.innerText !== "Regenerate response") return;
+    if (checkButton !== null && checkButton.innerText !== "Regenerate response") return;
     //   copy text
     let inputArea = document.querySelector("#prompt-textarea");
     let sendButton = document.querySelector("#prompt-textarea + button");
