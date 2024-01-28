@@ -27,3 +27,6 @@ just copy code to tampermonkey extension
 - ChatGPT Helper
   - [install](https://greasyfork.org/zh-TW/scripts/471324-chatgpt-helper)
   - improve chatGPT experience
+- remove image lazy load
+  - [install](https://greasyfork.org/zh-TW/scripts/485887-remove-image-lazy-load)
+  - remove lazy load from image
