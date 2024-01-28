@@ -44,7 +44,8 @@
     for (let image of images) {
       image.removeAttribute("loading");
       // set data-src to src
-      image.setAttribute("src", image.getAttribute("data-src"));
+      if (image.getAttribute("data-src") !== null)
+        image.setAttribute("src", image.getAttribute("data-src"));
     }
   }
 })();
