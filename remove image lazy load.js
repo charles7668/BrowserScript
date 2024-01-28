@@ -43,8 +43,8 @@
     let images = document.getElementsByTagName("img");
     for (let image of images) {
       image.removeAttribute("loading");
+      // set data-src to src
+      image.setAttribute("src", image.getAttribute("data-src"));
     }
-    // set data-src to src
-    images.setAttribute("src", images.getAttribute("data-src"));
   }
 })();
