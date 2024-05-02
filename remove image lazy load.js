@@ -46,6 +46,8 @@
       // set data-src to src
       if (image.getAttribute("data-src") !== null)
         image.setAttribute("src", image.getAttribute("data-src"));
+      else if (image.getAttribute("data-original") !== null)
+        image.setAttribute("src", image.getAttribute("data-original"));
     }
   }
 })();
